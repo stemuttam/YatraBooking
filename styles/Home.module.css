@@ -1,0 +1,106 @@
+.main {
+  background: linear-gradient(to bottom right, #f0f8ff, #ecfdf5);
+  padding-bottom: 80px;
+}
+
+.hero {
+  text-align: center;
+  margin-top: none;
+  padding: 0 32px;
+}
+
+
+.title {
+  font-size: 56px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.highlight {
+  background: linear-gradient(to right, #3b82f6, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #4b5563;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.searchSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  padding: 0 24px;
+}
+
+
+.searchHeading {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.featuresSection {
+  margin-top: 100px;
+  text-align: center;
+  padding: 0 32px;
+}
+
+.featuresTitle {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.featuresSubtitle {
+  font-size: 18px;
+  color: #4b5563;
+  margin-bottom: 48px;
+}
+
+.featuresGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .featuresGrid {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.featureCard {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  flex: 1;
+  max-width: 320px;
+}
+
+.featureIcon {
+  font-size: 36px;
+  margin-bottom: 14px;
+}
+
+.featureHeading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.featureDesc {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+}
