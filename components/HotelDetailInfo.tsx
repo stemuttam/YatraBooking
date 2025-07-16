@@ -1,93 +1,61 @@
 // components/HotelDetailInfo.tsx
-import { Hotel } from '../types';
-import RatingStars from './RatingStars';
-import FacilityTag from './FacilityTag';
 import styles from './HotelDetailInfo.module.css';
 
-type Props = {
-  hotel: Hotel;
-  nights: number;
-};
-
-const HotelDetailInfo = ({ hotel, nights }: Props) => {
-  const tax = 522;
-  const total = hotel.price * nights + tax;
-
+export default function HotelDetailInfo({ hotel }: { hotel: any }) {
   return (
     <div className={styles.container}>
-      <button onClick={() => history.back()} className={styles.backBtn}>← Back to Results</button>
+      <img src={hotel.image} alt={hotel.name} className={styles.headerImage} />
 
-      <div className={styles.imageWrapper}>
-        <img src={hotel.image} alt={hotel.name} className={styles.hotelImage} />
+      <div className={styles.detailsGrid}>
+        <div className={styles.leftColumn}>
+          <h2 className={styles.hotelName}>{hotel.name}</h2>
+          <p className={styles.city}>📍 {hotel.city}</p>
+          <p className={styles.rating}>⭐ {hotel.rating} ({hotel.rating.toFixed(1)})</p>
 
-      </div>
+          <div className={styles.section}>
+            <h3>About This Hotel</h3>
+            <p>{hotel.description}</p>
+          </div>
 
-      <div className={styles.header}>
-        <div>
-          <h1 className={styles.hotelName}>{hotel.name}</h1>
-          <p className={styles.location}>📍 {hotel.city}</p>
-          <RatingStars rating={hotel.rating} />
-        </div>
-      </div>
-
-      <div className={styles.layout}>
-        {/* LEFT DETAILS */}
-        <div className={styles.left}>
-          {/* About Section */}
-          <section className={styles.card}>
-            <h2 className={styles.sectionTitle}>About This Hotel</h2>
-            <p className={styles.text}>{hotel.description}</p>
-          </section>
-
-          {/* Facilities Section */}
-          <section className={styles.card}>
-            <h2 className={styles.sectionTitle}>Facilities & Amenities</h2>
-            <div className={styles.facilityList}>
-              {hotel.facilities.map(fac => (
-                <FacilityTag key={fac} label={fac} />
+          <div className={styles.section}>
+            <h3>Facilities & Amenities</h3>
+            <div className={styles.tags}>
+              {hotel.facilities.map((item: string, i: number) => (
+                <span className={styles.tag} key={i}>{item}</span>
               ))}
             </div>
-          </section>
+          </div>
 
-          {/* Contact Section */}
-          <section className={styles.card}>
-            <h2 className={styles.sectionTitle}>Contact Information</h2>
-            <ul className={styles.contactList}>
-              <li>📞 {hotel.phone}</li>
-              <li>✉️ {hotel.email}</li>
-              <li>📍 {hotel.location}</li>
-            </ul>
-          </section>
+          <div className={styles.section}>
+            <h3>Contact Information</h3>
+            <p>📞 {hotel.phone}</p>
+            <p>✉️ {hotel.email}</p>
+            <p>📍 {hotel.location}</p>
+          </div>
         </div>
 
-        {/* RIGHT SIDEBAR */}
-        <aside className={styles.sidebar}>
-          <div className={styles.price}>₹{hotel.price.toLocaleString()}</div>
-          <p className={styles.priceLabel}>per night</p>
+        <div className={styles.rightColumn}>
+          <div className={styles.pricingBox}>
+            <h3 className={styles.price}>₹{hotel.price.toLocaleString()}</h3>
+            <p className={styles.perNight}>per night</p>
 
-          <div className={styles.ratingLocation}>
-            <p><strong>Rating:</strong> {hotel.rating}</p>
-            <p><strong>Location:</strong> {hotel.city}</p>
+            <div className={styles.breakdown}>
+              <p><strong>Rating:</strong> ⭐ {hotel.rating}</p>
+              <p><strong>Location:</strong> {hotel.city}</p>
+              <p><strong>Base Price:</strong> ₹{hotel.price}</p>
+              <p><strong>Taxes & Fees:</strong> ₹522</p>
+              <hr />
+              <p className={styles.total}><strong>Total:</strong> ₹{hotel.price + 522}</p>
+            </div>
+
+            <button className={styles.bookBtn} onClick={() => alert(`Booking initiated for ${hotel.name}!`)}>
+              🛎️ Book Now
+            </button>
+
+            <p className={styles.cancellation}>✅ Free cancellation up to 24 hours</p>
           </div>
-
-          <div className={styles.breakdown}>
-            <p>Base Price: ₹{hotel.price.toLocaleString()}</p>
-            <p>Taxes & Fees: ₹{tax}</p>
-            <p className={styles.total}>Total: ₹{total.toLocaleString()}</p>
-          </div>
-
-          <button
-            className={styles.bookBtn}
-            onClick={() => alert(`Booking initiated for ${hotel.name}!`)}
-          >
-            🧾 Book Now
-          </button>
-
-          <p className={styles.note}>✅ Free cancellation up to 24 hours</p>
-        </aside>
+        </div>
       </div>
     </div>
   );
-};
-
-export default HotelDetailInfo;
+}
