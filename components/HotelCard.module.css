@@ -1,93 +1,76 @@
 .card {
   display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
-}
-
-@media (min-width: 640px) {
-  .card {
-    flex-direction: row;
-  }
+  background: white;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+  margin-top: 24px;
 }
 
 .image {
-  width: 100%;
-  height: 220px;
+  width: 280px;
+  height: auto;
   object-fit: cover;
+  border-radius: 16px 0 0 16px;
 }
 
-@media (min-width: 640px) {
-  .image {
-    width: 35%;
-    height: auto;
-  }
-}
-
-.content {
+.infoSection {
   display: flex;
-  flex-direction: column;
-  padding: 16px;
-  gap: 12px;
-}
-
-@media (min-width: 640px) {
-  .content {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: stretch;
-  }
-}
-
-.mainInfo {
+  justify-content: space-between;
+  padding: 24px;
   flex: 1;
+  gap: 24px;
 }
 
-.title {
+.infoLeft {
+  flex: 2;
+}
+
+.name {
   font-size: 20px;
-  font-weight: bold;
-  color: #111827;
+  font-weight: 600;
   margin-bottom: 4px;
 }
 
 .city {
   font-size: 14px;
   color: #6b7280;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
 }
 
 .desc {
   font-size: 14px;
   color: #374151;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .facilities {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
-.sideInfo {
-  width: 100%;
+.tag {
+  background-color: #f3f4f6;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #111827;
+}
+
+.infoRight {
+  text-align: right;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  padding-top: 12px;
-  border-top: 1px solid #e5e7eb;
+  justify-content: space-between;
+  min-width: 180px;
 }
 
-@media (min-width: 640px) {
-  .sideInfo {
-    width: 200px;
-    padding-top: 0;
-    border-top: none;
-    border-left: 1px solid #e5e7eb;
-    padding-left: 16px;
-  }
+.rating {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .price {
@@ -96,28 +79,25 @@
   color: #111827;
 }
 
-.perNight {
-  font-size: 13px;
-  color: #6b7280;
-}
-
 .total {
-  font-size: 12px;
-  color: #9ca3af;
+  font-size: 14px;
+  color: #6b7280;
+  margin: 4px 0 12px;
 }
 
 .button {
-  margin-top: 10px;
-  background-color: #2563eb;
+  background: linear-gradient(to right, #2563eb, #10b981);
   color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
   font-weight: 500;
-  transition: background-color 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  text-align: center;
+  transition: 0.2s ease;
 }
 
 .button:hover {
-  background-color: #1d4ed8;
+  background: linear-gradient(to right, #1d4ed8, #059669);
 }
