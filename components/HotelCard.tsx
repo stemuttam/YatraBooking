@@ -8,8 +8,7 @@ import FacilityTag from './FacilityTag';
 const HotelCard = ({ hotel }: { hotel: Hotel }) => {
   return (
     <div className={styles.card}>
-      <img src={hotel.image} alt={hotel.name} className={styles.image} />
-
+      <img src={hotel.image} alt={hotel.name} className={styles.hotelImage} />
       <div className={styles.content}>
         <div className={styles.mainInfo}>
           <h3 className={styles.title}>{hotel.name}</h3>
