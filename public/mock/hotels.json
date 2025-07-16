@@ -7,7 +7,7 @@
     "price": 3500,
     "facilities": ["Free WiFi", "AC", "Breakfast", "Room Service"],
     "description": "Elegant stay with all modern amenities.",
-    "image": "/images/hotel-1.jpg",
+    "image": "/images/hotel1.jpg",
     "email": "reservations@royalpalace.com",
     "phone": "+91 98765 43210",
     "location": "Delhi, India"
@@ -20,7 +20,7 @@
     "price": 2900,
     "facilities": ["AC", "Parking", "Pet Friendly", "Room Service"],
     "description": "Comfortable rooms in the heart of the city with easy access to major attractions and business districts.",
-    "image": "/images/hotel-2.jpg",
+    "image": "/images/hotel2.jpg",
     "email": "reservations@cozyinn.com",
     "phone": "+91 98765 43210",
     "location": "Mumbai, India"
@@ -33,7 +33,7 @@
     "price": 2200,
     "facilities": ["WiFi", "Gym", "Breakfast"],
     "description": "Budget-friendly and centrally located.",
-    "image": "/images/hotel-3.jpg",
+    "image": "/images/hotel3.jpg",
     "email": "sunshine@stay.com",
     "phone": "+91 99111 22334",
     "location": "Bangalore, India"
