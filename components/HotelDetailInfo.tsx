@@ -18,7 +18,8 @@ const HotelDetailInfo = ({ hotel, nights }: Props) => {
       <button onClick={() => history.back()} className={styles.backBtn}>← Back to Results</button>
 
       <div className={styles.imageWrapper}>
-        <img src={hotel.image} alt={hotel.name} className={styles.bannerImage} />
+        <img src={hotel.image} alt={hotel.name} className={styles.hotelImage} />
+
       </div>
 
       <div className={styles.header}>
