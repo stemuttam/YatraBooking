@@ -1,40 +1,29 @@
 // components/HotelCard.tsx
 import Link from 'next/link';
-import { Hotel } from '../types';
 import styles from './HotelCard.module.css';
-import RatingStars from './RatingStars';
-import FacilityTag from './FacilityTag';
 
-const HotelCard = ({ hotel }: { hotel: Hotel }) => {
+export default function HotelCard({ hotel }: { hotel: any }) {
   return (
     <div className={styles.card}>
-      <img src={hotel.image} alt={hotel.name} className={styles.hotelImage} />
-      <div className={styles.content}>
-        <div className={styles.mainInfo}>
-          <h3 className={styles.title}>{hotel.name}</h3>
+      <img src={hotel.image} alt={hotel.name} className={styles.image} />
+      <div className={styles.infoSection}>
+        <div className={styles.infoLeft}>
+          <h3 className={styles.name}>{hotel.name}</h3>
           <p className={styles.city}>📍 {hotel.city}</p>
           <p className={styles.desc}>{hotel.description}</p>
-
           <div className={styles.facilities}>
-            {hotel.facilities.map(f => (
-              <FacilityTag key={f} label={f} />
+            {hotel.facilities.map((f: string, i: number) => (
+              <span key={i} className={styles.tag}>{f}</span>
             ))}
           </div>
         </div>
-
-        <div className={styles.sideInfo}>
-          <RatingStars rating={hotel.rating} />
-          <p className={styles.price}>₹{hotel.price.toLocaleString()}</p>
-          <p className={styles.perNight}>per night</p>
-          <p className={styles.total}>Total: ₹{hotel.price.toLocaleString()}</p>
-
-          <Link href={`/hotels/${hotel.id}`}>
-            <button className={styles.button}>👁️ View Details</button>
-          </Link>
+        <div className={styles.infoRight}>
+          <div className={styles.rating}>⭐ {hotel.rating} ({hotel.rating.toFixed(1)})</div>
+          <div className={styles.price}>₹{hotel.price.toLocaleString()}</div>
+          <p className={styles.total}>Total: ₹{hotel.price}</p>
+          <Link href={`/hotels/hotel-${hotel.id}`} className={styles.button}>🔍 View Details</Link>
         </div>
       </div>
     </div>
   );
-};
-
-export default HotelCard;
+}
